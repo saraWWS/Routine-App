@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- This line tells the browser that this is a modern HTML page. -->
+<html lang="en">
+
+<!-- The "head" holds information ABOUT the page. It is not shown on the page itself. -->
+<head>
+    <!-- Lets the page show all kinds of letters and symbols correctly. -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page fit nicely on phones and small screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The text shown on the browser tab. -->
+    <title>My To-Do List</title>
+
+    <!-- Connects our CSS file, which controls how the page looks. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- The "body" holds everything you can actually SEE on the page. -->
+<body>
+
+    <!-- A box that holds the whole app, so we can center it and style it like a card. -->
+    <div class="container">
+
+        <!-- The main title of the page. -->
+        <h1> My Daily Routine</h1>
+
+        <!-- This row holds the text box and the button side by side. -->
+        <div class="input-row">
+
+            <!-- The text box where you type a new task.
+                 "placeholder" is the grey hint text shown when the box is empty.
+                 The "id" is a name we will use later in JavaScript to find this box. -->
+            <input type="text" id="task-input" placeholder="Type a new task...">
+
+            <!-- The button you will click to add the task.
+                 It does nothing yet - we will make it work with JavaScript later. -->
+            <button id="add-button">Add</button>
+        </div>
+
+        <!-- An empty list. Our tasks will appear here later.
+             "ul" means "unordered list" (a list with no numbers). -->
+        <ul id="task-list"></ul>
+
+    </div>
+
+    <!-- Connects our JavaScript file. We put it at the bottom
+         so the page loads first, before the script runs. -->
+    <script src="script.js"></script>
+</body>
+</html>

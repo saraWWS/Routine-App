@@ -1,0 +1,124 @@
+/* ===== Whole page ===== */
+/* "*" means "every element". We remove the browser's default spacing
+   so everything starts clean, and make sizes easier to work with. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The body is the whole page. */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* A simple, clean font. */
+    background-color: #f0f2f5;                 /* Light grey background. */
+    color: #333333;                            /* Dark grey text (softer than pure black). */
+
+    /* These lines put our app in the middle of the screen. */
+    min-height: 100vh;          /* Make the body at least as tall as the screen. */
+    display: flex;              /* Turn on "flexbox", a tool for arranging things. */
+    justify-content: center;    /* Center horizontally (left-right). */
+    align-items: center;        /* Center vertically (up-down). */
+    padding: 16px;              /* A little space around the edges on small screens. */
+}
+
+/* ===== The white card ===== */
+.container {
+    background-color: #ffffff;                   /* White card. */
+    width: 100%;                                 /* Fill the available space... */
+    max-width: 400px;                            /* ...but never wider than 400px. */
+    padding: 30px;                               /* Space inside the card. */
+    border-radius: 12px;                         /* Rounded corners. */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);   /* A soft shadow so the card "floats". */
+}
+
+/* ===== Title ===== */
+h1 {
+    text-align: center;   /* Center the title text. */
+    margin-bottom: 20px;  /* Space below the title. */
+    font-size: 28px;
+}
+
+/* ===== Input box + button row ===== */
+.input-row {
+    display: flex;  /* Put the text box and button next to each other. */
+    gap: 10px;      /* Space between them. */
+}
+
+/* The text box. */
+#task-input {
+    flex: 1;                     /* Take up all the space the button doesn't use. */
+    padding: 10px;               /* Space inside the box around the text. */
+    font-size: 16px;
+    border: 1px solid #cccccc;   /* Thin grey border. */
+    border-radius: 6px;          /* Slightly rounded corners. */
+}
+
+/* When you click inside the text box, it gets "focus".
+   We change the border color so you can see which box is active. */
+#task-input:focus {
+    outline: none;               /* Remove the browser's default blue glow. */
+    border-color: #4a90e2;       /* Use our own blue border instead. */
+}
+
+/* The Add button. */
+#add-button {
+    padding: 10px 20px;          /* Space inside: 10px top/bottom, 20px left/right. */
+    font-size: 16px;
+    background-color: #4a90e2;   /* Blue button. */
+    color: #ffffff;              /* White text. */
+    border: none;                /* No border. */
+    border-radius: 6px;
+    cursor: pointer;             /* Show a hand cursor when you hover over it. */
+}
+
+/* When your mouse is over the button, make it a little darker. */
+#add-button:hover {
+    background-color: #357abd;
+}
+
+/* ===== The task list ===== */
+#task-list {
+    list-style: none;   /* Remove the default bullet points. */
+    margin-top: 20px;   /* Space between the input row and the list. */
+}
+
+/* Each task in the list (we will add these later with JavaScript). */
+#task-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;   /* A thin line between tasks. */
+
+    /* Put the task text on the left and the Delete button on the right. */
+    display: flex;
+    justify-content: space-between;     /* Push the two apart, to opposite sides. */
+    align-items: center;                /* Line them up vertically in the middle. */
+    gap: 10px;                          /* Keep some space between text and button. */
+}
+
+/* The task text. "word-break" stops very long words from
+   pushing the Delete button out of the card. */
+#task-list li span {
+    word-break: break-word;
+    cursor: pointer;   /* Hand cursor, to show the text can be clicked. */
+}
+
+/* A finished task. JavaScript adds the "done" class when you click the text. */
+#task-list li span.done {
+    text-decoration: line-through;   /* Draw a line through the text. */
+    color: #999999;                  /* Make it lighter grey, so it looks finished. */
+}
+
+/* The Delete button next to each task. */
+.delete-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #e74c3c;   /* Red, because it removes things. */
+    color: #ffffff;              /* White text. */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;             /* Hand cursor on hover. */
+}
+
+/* Make the Delete button a darker red when your mouse is over it. */
+.delete-button:hover {
+    background-color: #c0392b;
+}
